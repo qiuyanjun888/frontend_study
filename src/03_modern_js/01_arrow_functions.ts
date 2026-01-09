@@ -69,5 +69,6 @@ function outer() {
     };
 }
 
+// outer()()
 const inner = outer();
 inner();
