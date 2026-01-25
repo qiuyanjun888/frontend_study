@@ -17,6 +17,15 @@
 
 
 ---
+## 版本
+
+- ✅ **React 18.3.1** - React 核心库
+- ✅ **React DOM 18.3.1** - React DOM 渲染
+- ✅ **TypeScript 5.6.2** - 类型支持
+- ✅ **Vite 6.0.5** - 快速开发服务器和构建工具
+- ✅ **@vitejs/plugin-react 4.3.4** - Vite 的 React 插件
+
+---
 
 # 基础部分（必学）
 
