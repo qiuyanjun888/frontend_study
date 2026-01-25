@@ -1,109 +1,197 @@
-# 面向 Java 开发者的 TypeScript 学习路径
+# 前端学习计划
 
-本学习计划旨在通过优先关注最具影响力的特性（二八原则），帮助 Java 开发者高效地转型到 TypeScript。
+> **目标**：作为 Java 程序员，掌握前端技能以独立开发产品，记录自己的学习过程。
 
-## 📊 当前标准 (2026)
-- **TypeScript 版本:** ~5.9.x (最新稳定版)
-- **ECMAScript 版本:** ES2025 (正式版) / ES2026 (草案)
-  - *注：在 JavaScript 世界中，“ES6”（ES2015）是一个重大转折点。现代 TypeScript 涵盖了直到 ES2025 及之后的所有特性。*
+## 学习路线图
 
----
-
-## 🚀 第一阶段：“80%” 的核心特性
-这些是你 80% 的时间都会用到的功能。基于你的 Java 背景，这些内容会让你感到最亲切，但其中也存在一些关键差异。
-
-### 1. 类型系统基础
-- **静态类型:** 基础类型 (`string`, `number`, `boolean`, `any`, `unknown`, `void`, `never`)。
-- **类型推断:** TS 如何猜测类型（不同于 Java 那种重度依赖显式声明的风格）。
-- **联合类型与交叉类型:** `string | number`（一个变量可以属于多种可能的类型）。
-- **接口 (Interfaces) 与类型别名 (Type Aliases):** 定义对象的“形状”。
-
-### 2. 面向对象编程 (Java 风格)
-- **类 (Classes):** 构造函数、属性、方法。
-- **访问修饰符:** `public`, `private`, `protected` 以及 `#` 私有字段。
-- **抽象类与接口:** 实现契约/规范。
-- **泛型 (Generics):** TS 中相当于 `List<T>` 的实现。
-
-### 3. 现代 JavaScript (ES6+) 基础
-- **箭头函数:** 词法作用域下的 `this` 绑定（与 Java 的关键区别）。
-- **解构赋值 (Destructuring):** 从对象和数组中高效提取数据。
-- **展开/剩余运算符 (Spread/Rest):** 使用 `...` 进行数据合并或收集。
-- **Async/Await:** 处理异步并发的现代方式（基于 Promise）。
-
-### 4. 模块与工具链
-- **ES 模块:** `import`/`export` 语法。
-- **tsconfig.json:** 配置编译器（强烈建议开启“严格模式”）。
-
----
-
-## 🧪 第二阶段：“20%” 的高级特性
-这些是用于复杂库、框架（如 Angular/NestJS）或特定边缘场景的高级功能。
-
-### 1. 高级类型操作
-- **映射类型 (Mapped Types):** 基于旧类型创建新类型（例如：`Partial<T>`, `Readonly<T>`）。
-- **条件类型 (Conditional Types):** `T extends U ? X : Y`。
-- **模板字面量类型:** 强化字符串操作的类型安全。
-- **类型守卫 (Type Guards) 与断言:** `is` 关键字和 `as` 语法。
-
-### 2. 元编程 (Meta-programming)
-- **装饰器 (Decorators):** 类似于 Java 的 **注解 (Annotations)**（在 NestJS/Spring 风格的框架中大量使用）。
-- **元数据反射 (Metadata Reflection):** 了解 TS 如何在运行时存储类型信息。
-
-### 3. 深度探索
-- **结构化类型 vs 名义类型 (Structural vs. Nominal):** 为什么 TS 允许“长得像鸭子就是鸭子”的兼容性（不同于 Java 的严格继承）。
-- **命名空间 vs 模块:** 了解为什么模块 (ESM) 最终赢得了标准之争。
-- **声明文件 (.d.ts):** 如何在没有类型定义的情况下使用第三方 JS 库。
-
----
-
-## 📈 学习路线图
-
-1. **第 1 周：基础** - 基本类型、接口和箭头函数。
-2. **第 2 周：OOP 桥梁** - 将 Java 的类模式迁移至 TS。
-3. **第 3 周：函数式 TS** - 常用数组方法 (`map`, `filter`, `reduce`) 与解构。
-4. **第 4 周：高级安全** - 泛型、联合类型与类型收窄。
-5. **第 5 周：生态系统** - 使用 Vite 或 NestJS 构建一个实际项目。
-
----
-
-## 📂 目录结构
-
-项目采用了按知识点分类的目录结构，方便查阅：
-
-```text
-typescript-study/
-├── src/
-│   ├── 01_type_system/         # 类型系统基础 (Primitives, Inference, Unions)
-│   ├── 02_oop_programming/    # 面向对象编程 (Classes, Access Modifiers, Generics)
-│   ├── 03_modern_js/          # 现代 JS 特性 (Arrow Functions, Destructuring, Async)
-│   ├── 04_modules/            # 模块化 (Import/Export)
-│   ├── 05_advanced_types/     # 高级类型 (Mapped, Conditional Types)
-│   ├── 06_meta_programming/   # 元编程 (Decorators)
-│   └── 07_deep_dives/         # 深度探索 (Structural Typing, Declaration Files)
-├── README.md                  # 本学习说明文档
-├── package.json               # 项目依赖与脚本配置
-└── tsconfig.json              # TypeScript 编译选项
+```
+TypeScript → React → Next.js
+     ↓
+  Node.js
+     ↓
+  NestJS（需要复杂后端时）
 ```
 
 ---
 
-## 🛠️ 如何运行代码
+## 模块一：TypeScript 基础
 
-本项目已配置 `tsx`，它可以直接运行 `.ts` 文件而无需手动编译。
+> Java 程序员优势：类型系统、面向对象、泛型等概念直接迁移
 
-### 1. 安装依赖
-如果你是第一次克隆项目，请运行：
-```bash
-npm install
+### 学习内容
+
+| 主题 | 说明 |
+|------|------|
+| 基础类型 | string, number, boolean, array, object |
+| 接口与类型别名 | interface vs type，类似 Java 接口 |
+| 函数类型 | 参数类型、返回类型、箭头函数 |
+| 类与继承 | 与 Java 类似，但 JS 更常用组合 |
+| 泛型 | 与 Java 泛型几乎一致 |
+| 模块系统 | import/export，类似 Java 的 package |
+| 异步编程 | Promise, async/await（重点！） |
+| 类型推断 | TS 比 Java 更智能的类型推断 |
+| 联合类型与交叉类型 | Java 没有的概念，很实用 |
+| 工具类型 | Partial, Pick, Omit 等，按需学习 |
+
+### 实战输出
+- [ ] 完成 10+ 个小练习
+- [ ] 能够看懂 React 项目中的 TypeScript 代码
+
+---
+
+## 模块二：React 基础
+
+> 核心模块！现代前端开发的基石
+
+### 学习内容
+
+| 主题 | 说明 |
+|------|------|
+| JSX 语法 | HTML + JS 的混合写法 |
+| 组件思维 | 函数组件为主，类组件了解即可 |
+| Props 与 State | 数据流核心概念 |
+| useState Hook | 状态管理基础 |
+| useEffect Hook | 副作用处理（API调用等） |
+| 事件处理 | onClick, onChange 等 |
+| 条件渲染与列表 | 动态 UI 渲染 |
+| 表单处理 | 受控组件、表单验证 |
+| useContext | 简单的全局状态 |
+| useRef | DOM 引用、持久化值 |
+| 自定义 Hook | 逻辑复用 |
+| useMemo/useCallback | 性能优化，10万用户暂时不需要 |
+
+### 实战输出
+- [ ] Todo App（经典练手）
+- [ ] 带表单的 CRUD 页面
+- [ ] 调用后端 API 展示数据
+
+---
+
+## 模块三：Next.js 全栈开发
+
+> **重点模块**！一个框架搞定前后端，最适合独立开发者
+
+### 为什么选 Next.js？
+- 零配置开箱即用
+- 内置路由，无需 React Router
+- API Routes 可直接写后端接口
+- 服务端渲染(SSR) 对 SEO 友好
+- Vercel 一键部署，免费额度足够 10 万用户
+
+### 学习内容
+
+| 主题 | 说明 |
+|------|------|
+| App Router | 基于文件的路由系统（v13+） |
+| 页面与布局 | page.tsx, layout.tsx |
+| Server Components | 服务端组件，默认行为 |
+| Client Components | 'use client' 客户端交互 |
+| API Routes | route.ts 写后端接口 |
+| 数据获取 | fetch, Server Actions |
+| 动态路由 | [id], [...slug] 等 |
+| Middleware | 认证、重定向等 |
+| 图片优化 | next/image 组件 |
+| 环境变量 | .env 配置管理 |
+| 部署 | Vercel 一键部署 |
+
+### 实战输出
+- [ ] 个人博客/作品集网站
+- [ ] 带用户认证的 SaaS 应用
+- [ ] 完整的全栈项目部署上线
+
+---
+
+## 模块四：样式方案
+
+> 推荐使用 TailwindCSS，快速出活
+
+### 学习内容
+
+| 主题 | 说明 |
+|------|------|
+| CSS 基础 | Flexbox, Grid 布局 |
+| TailwindCSS | 工具类 CSS，开发效率极高 |
+| 响应式设计 | 移动端适配 |
+| UI 组件库 | shadcn/ui 或 Ant Design |
+
+### 实战输出
+- [ ] 使用 TailwindCSS 完成一个响应式页面
+- [ ] 集成 shadcn/ui 组件库
+
+---
+
+## 模块五：Node.js 基础
+
+
+### 学习内容
+
+| 主题 | 说明 |
+|------|------|
+| 模块系统 | CommonJS vs ESM |
+| npm/pnpm 包管理 | 类似 Maven/Gradle |
+| 文件操作 | fs 模块 |
+| HTTP 服务 | 了解即可，用框架更好 |
+| 事件循环 | 理解异步原理 |
+
+---
+
+## 模块六：NestJS
+
+### 学习内容
+
+| 主题 | 说明 |
+|------|------|
+| 模块/控制器/服务 | 类似 Spring MVC |
+| 依赖注入 | 与 Spring 几乎一致 |
+| 中间件与管道 | 请求处理链 |
+| TypeORM 集成 | 类似 JPA/Hibernate |
+| 认证与授权 | JWT, Guard |
+
+
+---
+
+## 项目结构
+
+```
+frontend_study/
+├── packages/
+│   ├── 01-typescript/    # TypeScript 基础练习
+│   ├── 02-nodejs/        # Node.js 基础（可选）
+│   ├── 03-react/         # React 组件练习
+│   ├── 04-nextjs/        # Next.js 全栈项目
+│   └── 05-nestjs/        # NestJS 后端（可选）
+├── pnpm-workspace.yaml   # monorepo 配置
+└── package.json          # 根配置
 ```
 
-### 2. 运行指定的示例文件
-你可以直接运行任何一个 `.ts` 示例文件：
-```bash
-npx tsx <文件路径>
-```
+---
 
-例如，运行“基础类型”示例：
-```bash
-npx tsx src/01_type_system/01_primitives.ts
-```
+## 给 Java 程序员的建议
+
+1. **拥抱函数式编程**：JS/TS 更偏向函数式，少用 class
+2. **习惯异步**：async/await 无处不在，不像 Java 多线程
+3. **类型可以松一点**：不需要像 Java 那样严格，TS 类型推断很强
+4. **组件化思维**：React 组件 ≈ 可复用的 UI 类
+5. **文档优先**：前端生态变化快，官方文档是最好的学习资料
+
+---
+
+## 📖 官方文档资源
+
+- [TypeScript 官方文档](https://www.typescriptlang.org/docs/)
+- [React 官方文档](https://react.dev/)
+- [Next.js 官方文档](https://nextjs.org/docs)
+- [TailwindCSS 文档](https://tailwindcss.com/docs)
+- [shadcn/ui](https://ui.shadcn.com/) - 高质量 React 组件
+
+---
+
+## 学习进度追踪
+
+- [ ] 模块一：TypeScript 基础
+- [ ] 模块二：React 基础
+- [ ] 模块三：Next.js 全栈开发
+- [ ] 模块四：样式方案
+- [ ] 模块五：Node.js 基础（可选）
+- [ ] 模块六：NestJS（可选）
+- [ ] 实战项目：部署上线第一个产品 🚀

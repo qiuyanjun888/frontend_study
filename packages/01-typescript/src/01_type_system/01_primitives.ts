@@ -11,10 +11,23 @@
  */
 
 // 1. 显式类型标注 (Explicit Types)
+// below five types are primitive value, has wrapper object
 let userName: string = "Alice";
 let age: number = 30; // 整数
 let pi: number = 3.14; // 浮点数
 let isActive: boolean = true;
+let bigInt: bigint = 100n;
+
+console.log("hello".charAt(1)) // 自动转换成包装对象并调用方法
+
+
+let obj1: object = { id: 1, name: "jack" };
+let obj2: object = [1, 2, 3,]
+let obj3: object = (a: number) => a + 1
+let ud: undefined = undefined // undefined means the value is not defineded yet, maybe will defined in future.
+let nullVal: null = null // null means the value is null
+
+
 
 // 2. 数组 (Arrays)
 // 对应 Java 的 String[] 或 List<String>
@@ -33,17 +46,17 @@ dynamicValue = "Hello";
 let secureValue: unknown = "I am a string";
 // console.log(secureValue.toUpperCase()); // 错误，这里不能直接使用
 if (typeof secureValue === "string") {
-    console.log(secureValue.toUpperCase()); // 安全
+  console.log(secureValue.toUpperCase()); // 安全
 }
 
 // void: 对应 Java 的 void (用于函数没有返回值)
 function logMessage(msg: string): void {
-    console.log(msg);
+  console.log(msg);
 }
 
 // never: 表示永远不会发生的值（例如：总是抛出异常的函数）
 function throwError(msg: string): never {
-    throw new Error(msg);
+  throw new Error(msg);
 }
 
 console.log({ userName, age, isActive, list, pair });

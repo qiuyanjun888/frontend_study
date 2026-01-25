@@ -1,16 +1,11 @@
 {
-  "name": "typescript-study",
-  "version": "1.0.0",
-  "description": "本学习计划旨在通过优先关注最具影响力的特性（二八原则），帮助 Java 开发者高效地转型到 TypeScript。",
-  "main": "index.js",
+  "name": "frontend-study",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "tsx"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "tsx": "^4.21.0"
+    "ts": "pnpm --filter 01-typescript",
+    "node": "pnpm --filter 02-nodejs",
+    "react": "pnpm --filter 03-react",
+    "next": "pnpm --filter 04-nextjs",
+    "nest": "pnpm --filter 05-nestjs"
   }
 }
