@@ -1,6 +1,6 @@
 /**
  * 01. JSX 基础语法
- * 
+ *
  * JSX 是 JavaScript XML 的缩写，允许在 JS 中写类似 HTML 的代码
  */
 
@@ -16,7 +16,7 @@ export const BasicJSX = () => {
 
 // 2. 表达式嵌入
 export const JSXWithExpressions = () => {
-  const name = "张三"
+  const name = '张三'
   const age = 25
   const isStudent = true
 
@@ -26,7 +26,7 @@ export const JSXWithExpressions = () => {
       <p>姓名: {name}</p>
       <p>年龄: {age}</p>
       <p>计算: {2 + 2}</p>
-      <p>状态: {isStudent ? "学生" : "非学生"}</p>
+      <p>状态: {isStudent ? '学生' : '非学生'}</p>
     </div>
   )
 }
@@ -53,12 +53,12 @@ export const ConditionalRendering = () => {
 
 // 4. 列表渲染
 export const ListRendering = () => {
-  const fruits = ["苹果", "香蕉", "橙子", "葡萄"]
+  const fruits = ['苹果', '香蕉', '橙子', '葡萄']
 
   const users = [
-    { id: 1, name: "张三", age: 25 },
-    { id: 2, name: "李四", age: 30 },
-    { id: 3, name: "王五", age: 28 },
+    { id: 1, name: '张三', age: 25 },
+    { id: 2, name: '李四', age: 30 },
+    { id: 3, name: '王五', age: 28 },
   ]
 
   return (
@@ -103,7 +103,7 @@ export const StylingExample = () => {
   const headingStyle = {
     color: 'blue',
     fontSize: '24px',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   }
 
   return (
@@ -111,14 +111,10 @@ export const StylingExample = () => {
       <h2 style={headingStyle}>样式示例</h2>
 
       {/* 内联样式 */}
-      <p style={{ color: 'red', marginTop: '10px' }}>
-        这是红色文字
-      </p>
+      <p style={{ color: 'red', marginTop: '10px' }}>这是红色文字</p>
 
       {/* 动态类名 */}
-      <button className={isActive ? 'btn-active' : 'btn-inactive'}>
-        按钮
-      </button>
+      <button className={isActive ? 'btn-active' : 'btn-inactive'}>按钮</button>
     </div>
   )
 }
