@@ -106,19 +106,27 @@ const StatusBox = ({ status, message }: StatusBoxProps) => {
   )
 }
 
-// ============================================
-// 5. Props 展开运算符 (Spread Operator)
-// ============================================
-
-const ExtraInfo = (props: any) => {
+// 方式 A：在函数参数中直接解构所需字段，并使用 ...rest 获取剩余属性
+const ExtraInfo = ({ author, version, ...others }: any) => {
   return (
-    <div style={{ border: '1px solid #ccc', padding: '5px' }}>
-      <p>附加数据接收区 (查看控制台输出所有 Props)</p>
-      {/* 展示部分解构出的属性 */}
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+    <div style={{ border: '1px solid #ccc', padding: '15px', borderRadius: '8px' }}>
+      <p><strong>解构出的字段：</strong></p>
+      <ul>
+        <li>作者: {author}</li>
+        <li>版本: {version}</li>
+      </ul>
+
+      <p><strong>剩余透传的 Props (others)：</strong></p>
+      <pre>{JSON.stringify(others, null, 2)}</pre>
     </div>
   )
 }
+
+/**
+ * 补充知识点：
+ * 如果在函数体内解构，写法如下：
+ * const { author, version } = props;
+ */
 
 // ============================================
 // 主示例组件 (React 18+)
