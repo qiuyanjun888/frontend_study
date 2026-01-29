@@ -6,6 +6,7 @@ import JSXExamples from './01_core/01_jsx'
 import ComponentsExamples from './01_core/02_components'
 import PropsExamples from './01_core/03_props'
 import UseStateExamples from './02_hooks/01_useState'
+import UseReducerExamples from './02_hooks/02_useReducer'
 
 // 定义导航结构 (按 README 学习计划组织)
 const NAVIGATION = [
@@ -27,7 +28,8 @@ const NAVIGATION = [
                 title: '2. React Hooks',
                 items: [
                     { id: 'useState', title: '2.1 useState', component: <UseStateExamples /> },
-                    { id: 'useEffect', title: '2.2 useEffect', component: <Placeholder title="useEffect" /> },
+                    { id: 'useReducer', title: '2.2 useReducer', component: <UseReducerExamples /> },
+                    { id: 'useEffect', title: '2.3 useEffect', component: <Placeholder title="useEffect" /> },
                 ],
             },
         ],
