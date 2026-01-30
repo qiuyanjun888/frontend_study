@@ -7,6 +7,10 @@ import ComponentsExamples from './01_core/02_components'
 import PropsExamples from './01_core/03_props'
 import UseStateExamples from './02_hooks/01_useState'
 import UseReducerExamples from './02_hooks/02_useReducer'
+import UseEffectExamples from './02_hooks/03_useEffect'
+import UseMemoExamples from './02_hooks/04_useMemo'
+import UseCallbackExamples from './02_hooks/05_useCallback'
+import UseRefExamples from './02_hooks/06_useRef'
 
 // 定义导航结构 (按 README 学习计划组织)
 const NAVIGATION = [
@@ -29,21 +33,16 @@ const NAVIGATION = [
                 items: [
                     { id: 'useState', title: '2.1 useState', component: <UseStateExamples /> },
                     { id: 'useReducer', title: '2.2 useReducer', component: <UseReducerExamples /> },
-                    { id: 'useEffect', title: '2.3 useEffect', component: <Placeholder title="useEffect" /> },
+                    { id: 'useEffect', title: '2.3 useEffect', component: <UseEffectExamples /> },
+                    { id: 'useMemo', title: '2.4 useMemo', component: <UseMemoExamples /> },
+                    { id: 'useCallback', title: '2.5 useCallback', component: <UseCallbackExamples /> },
+                    { id: 'useRef', title: '2.6 useRef', component: <UseRefExamples /> },
                 ],
             },
         ],
     },
 ]
 
-function Placeholder({ title }: { title: string }) {
-    return (
-        <div className="placeholder">
-            <h3>{title} 章节正在编写中...</h3>
-            <p>稍后会更新对应的代码示例。</p>
-        </div>
-    )
-}
 
 function App() {
     const [activeId, setActiveId] = useState('jsx')
